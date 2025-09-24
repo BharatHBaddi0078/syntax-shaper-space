@@ -39,20 +39,23 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Light mode code colors */
+    --code-bg: 0 0% 97%;
+    --code-border: 214.3 31.8% 91.4%;
+    --editor-bg: 0 0% 99%;
+    --syntax-comment: 215.4 16.3% 46.9%;
+    --syntax-keyword: 221 83% 53%;
+    --syntax-string: 142 71% 45%;
+    --syntax-number: 15 80% 50%;
+    --syntax-function: 262 83% 58%;
   }
 
   .dark {
@@ -91,6 +94,16 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark mode code colors */
+    --code-bg: 240 10% 3.9%;
+    --code-border: 217.2 32.6% 17.5%;
+    --editor-bg: 223 47% 7%;
+    --syntax-comment: 215 20% 65%;
+    --syntax-keyword: 213 93% 68%;
+    --syntax-string: 158 64% 52%;
+    --syntax-number: 31 81% 61%;
+    --syntax-function: 197 92% 61%;
   }
 }
 
@@ -102,4 +115,23 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom scrollbar for code areas */
+.code-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+.code-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+.code-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
 }
